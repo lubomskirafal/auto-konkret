@@ -85,7 +85,7 @@ module.exports = {
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: "src/templates/template.html",
-      filename: 'index.[hash].html',
+      filename: 'index.html',
       title: "New Project",
       minify: {
         collapseWhitespace: true,

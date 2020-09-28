@@ -3,3 +3,24 @@
 @import './components/variables';
 @import './components/mixins';
 @import './components/typography';
+@import './components/logo';
+@import './components/main_manu';
+@import './components/header';
+
+
+body {
+    position: relative;
+    width: 100%;
+    max-width: 2440px;
+    margin: 0 auto;
+    background-color: $main-bgc;
+    min-height: 200vh;
+    font-family: arial, sans-serif;
+    font-size: 10px;
+}
+
+.wrapper {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+}

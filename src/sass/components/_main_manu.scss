@@ -1,0 +1,149 @@
+.mainManu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba( $second-bgc, .7);
+    z-index: 1;
+    & .wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 20px;
+    }
+    .manu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.hamburger {
+    border: none;
+    outline: none;
+    padding: 5px;
+    background-color: transparent;
+    &:focus {
+        box-shadow: 0 0 2px $main-box-shadow;
+    }
+    &:hover {
+        cursor: pointer;
+    }
+    &__box {
+        position: relative;
+        width: 30px;
+        height: 30px;
+        &::before, 
+        &::after {
+            position: absolute;
+            content: '';
+            width: 100%;
+            height: 2px;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            background-color: $main-fc;
+        }
+        &::before {
+            top: 4px;
+        }
+        &::after {
+            bottom: 2px;
+        }
+    }
+    &__inner {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        height: 2px;
+        transform: translate(-50%, -50%);
+        background-color: $main-fc;
+        
+    }
+    &--active &__inner {
+        animation: innerActive .4s ease-in forwards;
+    }
+    &--noActive &__inner {
+        animation: innerNoActive .4s ease-in forwards;
+    }
+    &--active &__box::before {
+        animation: rotateBefore .5s ease-in forwards;
+    }
+    &--active &__box::after {
+        animation: rotateAfter .5s ease-in forwards;
+    }
+    &--noActive &__box::before {
+        animation: initialBefore .5s ease-in forwards;
+    }
+    &--noActive &__box::after {
+        animation: initialAfter .5s ease-in forwards;
+    }
+    @include media(xlarge) {
+        display: none;
+        transition: 0;
+    }
+    @keyframes innerNoActive {
+        0%{opacity: 0}
+        60%{opacity: 0}
+        70%{opacity: 1}
+        100%{opacity: 1}
+    }
+    @keyframes innerActive {
+        0%{opacity: 1}
+        50%{opacity: 1}
+        60%{opacity: 0;}
+        100%{opacity: 0}
+    }
+    @keyframes initialAfter {
+        0%{
+            transform: rotate(-45deg) translate(-3px,-18px);
+        }
+        60%{
+            transform: rotate(0deg) translate(-50%, -10px);
+        }
+        100%{
+            transform: rotate(0deg) translate(-50%, -50%);
+        }
+    }
+    @keyframes initialBefore {
+        0%{
+            transform: rotate(45deg) translate(-3px,18px);
+        }
+        60%{
+            transform: rotate(0deg) translate(-50%, 10px);
+        }
+        100%{
+            transform: rotate(0deg) translate(-50%, -50%);
+        }
+    }
+    @keyframes rotateBefore {
+        0%{
+            transform: rotate(0deg) translate(-50%,-50%)
+        }
+        30%{
+            transform: rotate(0deg) translate(-50%,10px)
+        }
+        
+        60%{
+            transform: rotate(45deg) translate(-3px,18px);
+        }
+        100%{
+            transform: rotate(45deg) translate(-3px,18px);
+        }
+    }
+    @keyframes rotateAfter  {
+        0%{
+            transform: rotate(0deg) translate(-50%,-50%)
+        }
+        30%{
+            transform: rotate(0deg) translate(-50%,-10px)
+        }
+        
+        60%{
+            transform: rotate(-45deg) translate(-3px,-18px);
+        }
+        100%{
+            transform: rotate(-45deg) translate(-3px,-18px);
+        }
+    }
+}
