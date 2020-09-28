@@ -1,0 +1,81 @@
+Header set Strict-Transport-Security "max-age=31536000, public"  env=HTTPS
+RewriteEngine On
+RewriteBase /
+RewriteCond %{HTTP_HOST} !^(www\.)?yours-name.com$ [NC]
+RewriteRule ^(.*)$ //www.yours-name.com%{REQUEST_URI} [R=301,L]
+
+# TN - BEGIN Turn ETags Off
+FileETag None
+# TN - END Turn ETags Off
+
+RewriteCond %{HTTPS} !=on
+RewriteRule ^(.*)$ https://www.yours-name.com/$1 [R=301,L]
+
+#css, html, xml, asp, flash i inne
+AddType text/css .css
+AddType application/xhtml+xml .xhtml
+AddType text/html .shtml
+AddType text/xml .xml
+AddType text/html .asp
+AddType application/x-httpd-php .php
+AddType application/x-shockwave-flash .swf
+AddType application/x-director .dir .dcr .dxr .fgd
+AddType application/x-authorware-map .aam
+AddType application/x-authorware-seg .aas
+AddType application/x-authorware-bin .aab
+AddType image/x-freehand .fh4 .fh5 .fh7 .fhc .fh
+AddType application/x-java-applet .class
+# dokumenty
+AddType application/pdf .pdf
+AddType application/msword .doc
+#multimedia
+AddType audio/mpeg .mp3
+AddType video/x-msvideo .avi
+AddType audio/x-wav .wav
+AddType video/quicktime .mov .qt
+AddType video/x-ms-asf .asf .asx
+AddType audio/x-ms-wma .wma
+AddType audio/x-ms-wax .wax
+AddType video/x-ms-wmv .wmv
+AddType video/x-ms-wvx .wvx
+AddType video/x-ms-wm .wm
+AddType video/x-ms-wmx .wmx
+AddType application/x-ms-wmz .wmz
+AddType application/x-ms-wmd .wmd
+#skompresowane
+AddType application/zip .zip
+AddType application/x-gzip .gz
+AddType application/x-gtar .gtar
+AddType application/x-rar-compressed .rar
+AddType application/octet-stream .dmg
+AddType application/x-7z-compressed .7z
+#graficzne
+AddType image/jpg .jpg
+AddType image/gif .gif
+#pozostałe
+AddType application/x-bittorrent .torrent
+AddType application/vnd.rn-realmedia .rm
+AddType audio/vnd.rn-realaudio .ra .ram
+AddType video/vnd.rn-realvideo .rv
+
+## EXPIRES CACHING ##
+<filesMatch ".(ico|pdf|flv|jpg|jpeg|png|gif|js|css|swf|js|html|svg)$">
+Header set Cache-Control "max-age=31536000, public"
+</filesMatch>
+
+
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresByType image/jpg "access 1 year"
+ExpiresByType image/jpeg "access 1 year"
+ExpiresByType image/gif "access 1 year"
+ExpiresByType image/png "access 1 year"
+ExpiresByType text/css "access 1 month"
+ExpiresByType text/html "access 1 month"
+ExpiresByType application/pdf "access 1 month"
+ExpiresByType text/x-javascript "access 1 month"
+ExpiresByType application/x-shockwave-flash "access 1 month"
+ExpiresByType image/x-icon "access 1 year"
+ExpiresDefault "access 1 month"
+</IfModule>
+## EXPIRES CACHING ##
