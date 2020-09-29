@@ -23,7 +23,7 @@
         align-items: center;
         padding: 20px 50px;
         height: 100vh;
-        background-color: rgba(0,0,0, .9);
+        background-color: rgba(#222, .9);
         @include media(xlarge) {
             position: static;
             transform: translateX(0);
