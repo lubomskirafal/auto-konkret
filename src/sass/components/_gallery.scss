@@ -1,5 +1,20 @@
 .gallery {
-    a img {
-        width: 200px;
+    padding: 50px 10px;
+    width: 100%;
+    background-color: $main-bgc;
+    & .wrapper {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-template-rows: repeat(auto-fit, 1fr);
+        gap: 10px;
+        justify-items: center;
+        align-content: center;
+    }
+    &__link {
+        &-img {
+            width: 300px;
+            border-radius: 3px;
+            box-shadow: 3px 3px 3px -1px $main-box-shadow;
+        }
     }
 }
