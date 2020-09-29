@@ -66,6 +66,9 @@
         margin: 40px 0 0px 0;
         transition: box-shadow .2s;
         animation: lookAtMe 3s linear infinite;
+        &--offer {
+            align-self: flex-start;
+        }
         &:hover {
             box-shadow: 0 0 10px -1px $main-fc;
         }

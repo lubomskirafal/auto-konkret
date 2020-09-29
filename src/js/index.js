@@ -1,5 +1,11 @@
 import '.././sass/index.scss';
+import { Luminous } from 'luminous-lightbox';
 
+
+
+const gallery = document.querySelectorAll('.gallery a');
+
+gallery.forEach(img=> new Luminous(img));
 
 document.addEventListener('DOMContentLoaded', ()=> {
    

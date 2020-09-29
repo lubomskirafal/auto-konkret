@@ -23,7 +23,7 @@
         font-size: 2rem;
         width: 250px;
         a {
-            border: 1px solid $main-fc;
+            border: 2px solid $main-fc;
             width: 50px;
             height: 50px;
             border-radius: 50%;
@@ -50,9 +50,12 @@
     }
     &__copy {
         margin: 10px 0 0 0;
+        sup {
+            font-size: .8rem;
+        }
     }
     &__madeBy {
-        margin: 10px 0;
+        margin: 10px 0 0 0;
         &-box {
             display: flex;
             align-items: center;
@@ -90,7 +93,9 @@
             width: 20px;
         }
     }
-    &__cookies {
+    &__cookies,
+    &__rodo {
+        margin: 10px 0;
         &-link {
             position: relative;
             &::after {
