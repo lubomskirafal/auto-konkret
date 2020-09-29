@@ -1,7 +1,9 @@
 .logo {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    a {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
     &__img {
         width: 90px;
     }
