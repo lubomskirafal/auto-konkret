@@ -1,7 +1,8 @@
 .header {
     position: relative;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
+    border: 1px solid transparent;
 }
 
 .background {
@@ -31,23 +32,27 @@
 }
 
 .welcome {
-    position: absolute;
-    top: 20%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    // text-align: center;
     justify-content: center;
     padding: 10px;
+    margin: 100px 0 100px 0;
     color: $main-fc;
     &__titles {
         h1 {
             font-size: 2rem;
             letter-spacing: 1px;
+            @include media(xlarge) {
+                font-size: 3rem;
+            }
         }
         p {
             font-size: 1.5rem;
             margin-top: 40px;
+            @include media(xlarge) {
+                font-size: 2.2rem;
+            }
         }
     }
     &__button {
@@ -58,6 +63,94 @@
         border: 2px solid $main-fc;
         padding: 10px;
         letter-spacing: 1.2px;
-        margin-top: 40px;
+        margin: 40px 0 0px 0;
+        transition: box-shadow .2s;
+        animation: lookAtMe 3s linear infinite;
+        &:hover {
+            box-shadow: 0 0 10px -1px $main-fc;
+        }
+        @include media(xlarge) {
+            font-size: 1.6rem;
+            margin: 150px 0 0px 0;
+        }
+        @keyframes lookAtMe {
+            0% {transform: rotate(0deg)};
+            92% {transform: rotate(0deg)};
+            93% {
+                transform: rotate(-5deg);
+            };
+            94% {
+                transform: rotate(5deg);
+            };
+            95% {
+                transform: rotate(-5deg);
+            };
+            96% {
+                transform: rotate(5deg);
+            };
+            97% {
+                transform: rotate(-5deg);
+            };
+            98% {
+                transform: rotate(5deg);
+            };
+            99% {
+                transform: rotate(-5deg);
+            };
+            100% {
+                transform: rotate(5deg);
+            };
+        }
+    }
+}
+
+.goDown-btn {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    padding: 5px;
+    transform: translateX(-50%);
+    border: none;
+    border-radius: 30px;
+    outline: none;
+    background-color: transparent;
+    overflow: hidden;
+    box-shadow: 0 0 0px 1px transparent;
+    transition: box-shadow .3s;
+    z-index: 1;
+    &:hover,
+    &:focus,
+    &:active {
+        box-shadow: 0 0 0px 1px $main-fc;
+    }
+    &:hover {
+        cursor: pointer;
+    }
+    &__box {
+        position: relative;
+        width: 25px;
+        height: 40px;
+    }
+    &__inner {
+        position: absolute;
+        top: -20px;
+        left: 50%;
+        font-size: 1.6rem;
+        transform: translateX(-50%);
+        color: $main-fc;
+        animation: slide 1s infinite linear;
+        &:nth-child(2) {
+            top: 0;
+        }
+        &:nth-child(3) {
+            top: 20px;
+        }
+    }
+
+    @keyframes slide {
+        100% {
+            transform: translateY(20px) translateX(-50%);
+        }
+        
     }
 }

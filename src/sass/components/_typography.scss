@@ -1,0 +1,7 @@
+a {
+    color: $main-fc;
+    text-decoration: none;
+    &:hover {
+        cursor: pointer;
+    }
+}

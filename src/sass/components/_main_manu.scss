@@ -4,7 +4,7 @@
     left: 0;
     right: 0;
     background-color: rgba( $second-bgc, .7);
-    z-index: 1;
+    z-index: 2;
     & .wrapper {
         display: flex;
         align-items: center;
@@ -12,19 +12,95 @@
         padding: 10px 20px;
     }
     .manu {
+        position: absolute;
+        list-style: none;
+        top: 0;
+        left: 0;
+        transform: translateX(-100vw);
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
+        padding: 20px 50px;
+        height: 100vh;
+        background-color: rgba(0,0,0, .9);
+        @include media(xlarge) {
+            position: static;
+            transform: translateX(0);
+            height: 100%;
+            flex-direction: row;
+            background-color: transparent;
+            transition: transform 0;
+            align-items: space-between;
+        }
+        & li:nth-child(1) {
+            position: absolute;
+            display: none;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            bottom: 0;
+            background-color: transparent;
+            z-index: -1;
+        }
+        &__item {
+            width: 100%;
+            margin: 0 0 20px 0;
+            @include media(xlarge) {
+                margin: 0 50px 0 0;
+            }
+        }
+        &__item-link {
+            width: 100%;
+            height: 100%;
+            font-size: 2rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: color .3s;
+            &:hover {
+                color: orangered;
+            }
+            @include media(xlarge) {
+                font-size: 1.6rem;
+            }
+        }
+        &--active {
+            animation: manuActive .4s ease both;
+            & li:nth-child(1) {
+                display: block;
+            }
+            @keyframes manuActive {
+                0%{transform: translateX(-100vw)};
+                100%{transform: translateX(0)};
+            }
+        }
+        &--noActive {
+            animation: manuNoActive .4s ease both;
+            & li:nth-child(1) {
+                display: none;
+            }
+            @keyframes manuNoActive {
+                0%{transform: translateX(0)};
+                100%{transform: translateX(-100vw)};
+            }
+        }
     }
 }
+
+
+
+
+//hambureger button
 
 .hamburger {
     border: none;
     outline: none;
     padding: 5px;
     background-color: transparent;
-    &:focus {
-        box-shadow: 0 0 2px $main-box-shadow;
+    &:focus,
+    &:active,
+    &:hover {
+        box-shadow: 0 0 2px  1px$main-box-shadow;
     }
     &:hover {
         cursor: pointer;
