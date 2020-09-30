@@ -1,5 +1,6 @@
 import '.././sass/index.scss';
 import initCookies from './components/cookies';
+import isSafari from './components/isSafari';
 import smoothScroll from './components/smoothScroll';
 import { Luminous } from 'luminous-lightbox';
 import paralaxBackground from './components/paralax';
@@ -18,6 +19,9 @@ const manuBgListener = document.querySelectorAll('.manu li')
 document.addEventListener('DOMContentLoaded', ()=> {
 
     initCookies();
+
+    //check if userAgent is Safari to set proper display props
+    isSafari();
 
     //handle gallery
     gallery.forEach(img=> new Luminous(img));
