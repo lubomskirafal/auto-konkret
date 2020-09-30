@@ -1,0 +1,21 @@
+.goTopBtn {
+    position: fixed;
+    bottom: 50px;
+    right: 20px;
+    padding: 5px;
+    border: none;
+    background-color: transparent;
+    &__box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border: 2px solid $third-bgc;
+        border-radius: 50%;
+    }
+    &__inner {
+        color: $third-fc;
+        font-size: 1.8rem;
+    }
+}
