@@ -1,0 +1,35 @@
+.cookies {
+    position: fixed;
+    bottom: 0;
+    transform: translateY(100%);
+    transition: transform .3s;
+    z-index: 3;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 20px;
+    color: $main-fc;
+    background-color: $third-bgc;
+    font-size: 1rem;
+    &--active {
+       transform: translateY(0);
+    }
+    &--noActive {
+        transform: translateY(100%);
+    }
+    &__content {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        text-align: center;
+    }
+    &__links {
+        padding: 10px;
+    }
+    &__link {
+        color: $special-color;
+        margin: 10px;
+    }
+}

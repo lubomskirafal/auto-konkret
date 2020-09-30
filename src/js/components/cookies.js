@@ -1,4 +1,6 @@
-export const initCookies = ()=> {
+const initCookies = ()=> {
+
+    const cookiesMsg = document.querySelector('.cookies');
 
     const createCookie = (name, value, days)=> {
 
@@ -29,19 +31,21 @@ export const initCookies = ()=> {
  
      const closeCookiesWindow = ()=> {
 
-         createCookie('cookies_accepted', 'T', 365);
-         document.querySelector('.cookies-message-container').classList.remove('cookies-message-container--active');
+         createCookie('cookies_accepted', 'youreDomainName', 365);
+         cookiesMsg.classList.remove('cookies--active');
+         cookiesMsg.classList.add('cookies--noActive');
+
 
      };
      
      const checkCookies = ()=> {
 
-        if (readCookie('cookies_accepted') != 'T') {
+        if (readCookie('cookies_accepted') != 'youreDomainName') {
 
-         document.querySelector('.cookies-message-container').classList.add('cookies-message-container--active');
-         document.querySelector('#accept-cookies-checkbox').addEventListener('click', ()=>closeCookiesWindow());
+            cookiesMsg.classList.add('cookies--active');
+            document.querySelector('.cookie__button--accept').addEventListener('click', ()=>closeCookiesWindow());
 
-         };
+        };
 
      };
      

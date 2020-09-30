@@ -14,11 +14,10 @@ const manu = document.querySelector('.manu');
 const manuBgListener = document.querySelectorAll('.manu li')
 
 
-
 //init after DOM
 document.addEventListener('DOMContentLoaded', ()=> {
 
-    // initCookies();
+    initCookies();
 
     //handle gallery
     gallery.forEach(img=> new Luminous(img));
