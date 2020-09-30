@@ -1,0 +1,58 @@
+
+.paralax {
+    &__wrapper {
+        position: relative;
+        overflow: hidden;
+        p {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            max-width: 90%;
+            color: $main-fc;
+            font-size: 1.4rem;
+            text-transform: uppercase;
+            text-align: center;
+            word-break: normal;
+            letter-spacing: 1px;
+            background-color: $special-color;
+            padding: 10px;
+            border-radius: 3px;
+            @include media(small) {
+                font-size: 2rem;
+            }
+        }
+    }    
+    &__box {
+        position: relative;
+        width: 100%;
+        height: 380px;
+        background-color: #fff;
+        overflow: hidden;
+    }
+    &__inner {
+        position: absolute;
+        top: -960px;
+        left: 0;
+        right: 0;
+        height: 760px;
+        background: url('../../public/images/road-3856796_1920.jpg');
+        background-position: bottom;
+        background-repeat: no-repeat;
+        background-size: cover;
+        will-change: transform;
+        @include media(large) {
+            top: -700px;
+        }
+        &::after {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            content: '';
+            background-color: rgba($second-fc, .3);
+        }
+    }
+}

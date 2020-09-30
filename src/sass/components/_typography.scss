@@ -5,3 +5,14 @@ a {
         cursor: pointer;
     }
 }
+
+.hidden {
+    position: absolute;
+    color: transparent;
+    background-color: transparent;
+    visibility: hidden;
+    font-size: 0;
+    width: 0;
+    z-index: -99;
+    transform: translate(-100vw, -100vh);
+}
