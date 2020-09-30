@@ -24,7 +24,13 @@ document.addEventListener('DOMContentLoaded', ()=> {
 
     //handle hamburger namiation and show manu
     hamburger.addEventListener('click', ()=> handleHamburgerClick(manu, hamburger));
-    manuBgListener.forEach(item => item.addEventListener('click', ()=>handleHamburgerClick(manu , hamburger)));
+
+    manuBgListener.forEach(item => item.addEventListener('click', ()=> {
+        if(window.innerWidth < 1200) {
+            handleHamburgerClick(manu , hamburger);
+        }
+    }));
+    
     document.addEventListener('click', e => smoothScroll(e.target));
 
     document.addEventListener('scroll', e => {
@@ -43,7 +49,6 @@ document.addEventListener('DOMContentLoaded', ()=> {
             handleResize(manu, hamburger);
 
         };
-
     });
 
 });
