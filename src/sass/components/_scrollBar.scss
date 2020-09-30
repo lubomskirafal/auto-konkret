@@ -1,0 +1,18 @@
+
+* {
+    & {
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: $third-bgc;
+            border-radius: 8px;
+          }
+        
+        ::-webkit-scrollbar-thumb {
+            background: lighten($special-color, 20%);
+            border-radius: 10px;
+            
+          }
+    }
+}
