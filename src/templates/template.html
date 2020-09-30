@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatibile" content="IE=edge">
-    <script src="https://kit.fontawesome.com/ea48605765.js" crossorigin="secure"></script>
+    <script src="https://kit.fontawesome.com/ea48605765.js" crossorigin="anonymous"></script>
     <title>AutoKonkret-Nauka jazdy</title>
     <meta 
       name="description" 
@@ -59,34 +59,48 @@
         <ul class="manu">
           <li></li>
           <li class="manu__item">
-            <a href="#" class="manu__item-link">główna</a>
+            <a href="#"                       class="manu__item-link"
+            data-target=".header">główna</a>
           </li>
 
           <li class="manu__item">
-            <a href="#" class="manu__item-link">o nas</a>
+            <a 
+              href="#" 
+              class="manu__item-link"
+              data-target=".about"
+              >o nas</a>
           </li>
 
           <li class="manu__item">
-            <a href="#" class="manu__item-link">oferta</a>
+            <a 
+              href="#" class="manu__item-link"
+              data-target=".offer"
+              >oferta</a>
           </li>
 
           <li class="manu__item">
-            <a href="#" class="manu__item-link">galeria</a>
+            <a 
+              href="#" class="manu__item-link"
+              data-target=".gallery"
+              >galeria</a>
           </li>
 
           <li class="manu__item">
-            <a href="mailto:twojemail@twoja nazwa.pl" class="manu__item-link">kontakt</a>
+            <a 
+              href="#" class="manu__item-link"
+              data-target=".contact"
+              >kontakt</a>
           </li>
 
         </ul>
 
-          <button class="hamburger">
+        <button class="hamburger">
 
-            <div class="hamburger__box">
-              <span class="hamburger__inner"></span>
-            </div>
+          <div class="hamburger__box">
+            <span class="hamburger__inner"></span>
+          </div>
 
-          </button>
+        </button>
 
       </div>
     </nav>
@@ -109,11 +123,11 @@
         </div>
       </div>
 
-      <button data-target="#about" class="goDown-btn">
-        <div class="goDown-btn__box">
-          <span class="goDown-btn__inner fas fa-chevron-down"></span>
-          <span class="goDown-btn__inner fas fa-chevron-down"></span>
-          <span class="goDown-btn__inner fas fa-chevron-down"></span>
+      <button data-target=".offer" class="goDown-btn">
+        <div class="goDown-btn__box" data-target=".offer">
+          <span class="goDown-btn__inner fas fa-chevron-down" data-target=".offer"></span>
+          <span class="goDown-btn__inner fas fa-chevron-down" data-target=".offer"></span>
+          <span class="goDown-btn__inner fas fa-chevron-down" data-target=".offer"></span>
         </div>
       </button>
 
@@ -139,7 +153,7 @@
                 <p class="about__content-title">liczysz się ty</p>
                 <p class="about__content">
                   Wiemy że masz dużo obowiązków, dlatego wychodząc na przeciw Twoim oczekiwaniom, organizujemy jazdy, bezpośrednio z Twojego miejsca zamieszkania, aby nie tracić czasu na dojazdy.
-                  Godiny wykładów dostosowywane są do wymagań słuchaczy.
+                  Godziny wykładów dostosowywane są do wymagań słuchaczy.
                   Istnieje możliwość wykonania badań lekarskich, bezpośrednio w ośrodku szkoleniowym.
                 </p>
               </div>

@@ -11,10 +11,15 @@
         align-content: center;
     }
     &__link {
+        overflow: hidden;
         &-img {
             width: 250px;
             border-radius: 3px;
             box-shadow: 3px 3px 3px -1px $main-box-shadow;
+            transition: transform .5s;
+            &:hover {
+                transform: scale(1.1) rotate(4deg);
+            }
         }
     }
 }

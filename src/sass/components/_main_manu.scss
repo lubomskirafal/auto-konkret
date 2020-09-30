@@ -5,6 +5,7 @@
     right: 0;
     background-color: rgba( $second-bgc, .7);
     z-index: 2;
+    transition: transform .4s;
     & .wrapper {
         display: flex;
         align-items: center;
