@@ -39,6 +39,11 @@
         }
         &-link {
             text-decoration: underline;
+            transition: color .2s;
+            &:hover,
+            &:focus {
+                color: $special-color;
+            }
         }
         &-map {
             max-width: 1000px;

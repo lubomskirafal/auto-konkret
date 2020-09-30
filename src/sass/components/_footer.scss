@@ -38,7 +38,8 @@
                 transition: transform .2s linear;
                 transform-origin: center;      
             }
-            &:hover {
+            &:hover,
+            &:focus {
                 transform: scale(.8);
                 border: 1px solid transparent ;
                 transition: transform .2s linear, border .3s linear;
@@ -81,7 +82,8 @@
                 transform-origin: center;
                 background-color: $main-bgc;
             }
-            &:hover {
+            &:hover,
+            &:focus {
                 &::after {
                     transform: scaleX(1);
                 }
@@ -110,7 +112,8 @@
                 transform-origin: center;
                 background-color: $main-bgc;
             }
-            &:hover {
+            &:hover,
+            &:focus {
                 &::after {
                     transform: scaleX(1);
                 }

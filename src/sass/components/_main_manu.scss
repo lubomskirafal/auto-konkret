@@ -58,7 +58,8 @@
             letter-spacing: 1px;
             text-transform: uppercase;
             transition: color .3s;
-            &:hover {
+            &:hover,
+            &:focus {
                 color: orangered;
             }
             @include media(xlarge) {

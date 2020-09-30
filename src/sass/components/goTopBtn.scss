@@ -11,11 +11,22 @@
         justify-content: center;
         width: 40px;
         height: 40px;
-        border: 2px solid $third-bgc;
+        border: 2px solid $second-bgc;
+        transition: border .2s;
         border-radius: 50%;
     }
     &__inner {
-        color: $third-fc;
+        color: $second-fc;
         font-size: 1.8rem;
+        transition: color.2s;
+    }
+    &:hover,
+    &:focus {
+        .goTopBtn__box {
+            border: 2px solid $special-color;
+        }
+        .goTopBtn__inner {
+            color: $special-color;
+        }
     }
 }
