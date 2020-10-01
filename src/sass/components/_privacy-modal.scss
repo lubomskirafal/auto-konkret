@@ -1,0 +1,63 @@
+.privacy-modal {
+    position: absolute;
+    display: none;
+    visibility: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 100%;
+    height: 100vh;
+    overflow: auto;
+    padding: 50px 30px;
+    background-color: $main-bgc;
+    z-index: -99;
+    &--active {
+        position: fixed;
+        z-index: 99;
+        visibility: visible;
+        display: block;
+        animation: showModal .5s forwards;
+        @keyframes showModal {
+            100%{transform: translate(-50%, -50%) scale(1)}
+        }
+    }
+    h4 {
+        font-size: 1.8rem;
+        margin: 0 0 50px 0;
+        @include media(medium) {
+            font-size: 3rem;
+        }
+    }
+    h5,h6 {
+        font-size: 1.4rem;
+        margin: 50px 0 25px 0;
+        @include media(medium) {
+            font-size: 2rem;
+        }
+    }
+    &__content {
+        width: 100%;
+        color: &third-fc;
+        font-size: 1rem;
+        @include media(medium) {
+            font-size: 1.2rem;
+        }
+    }
+    ul {
+        padding: 20px;;
+    }
+    .closeBtn {
+        padding: 5px 10px;
+        font-size: 1rem;
+        letter-spacing: 1px;
+        border: none;
+        border-radius: 5px;
+        color: $main-fc;
+        background-color: $special-color;
+        transition: box-shadow .3s;
+        &:hover,
+        &:focus {
+            box-shadow:  0 0 10px 1px $third-bgc;
+        }
+    }
+}

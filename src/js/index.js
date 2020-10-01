@@ -1,5 +1,5 @@
 import '.././sass/index.scss';
-import initCookies from './components/cookies';
+import initCookies, { handlePrivacyModal } from './components/cookies';
 import isSafari from './components/isSafari';
 import smoothScroll from './components/smoothScroll';
 import { Luminous } from 'luminous-lightbox';
@@ -12,7 +12,6 @@ const gallery = document.querySelectorAll('.gallery a');
 const hamburger = document.querySelector('.hamburger');
 const mainManu = document.querySelector('.mainManu');
 const manu = document.querySelector('.manu');
-const manuBgListener = document.querySelectorAll('.manu li')
 
 
 //init after DOM
@@ -26,16 +25,23 @@ document.addEventListener('DOMContentLoaded', ()=> {
     //handle gallery
     gallery.forEach(img=> new Luminous(img));
 
-    //handle hamburger namiation and show manu
-    hamburger.addEventListener('click', ()=> handleHamburgerClick(manu, hamburger));
+    document.addEventListener('click', e => {
+        if(e.target.dataset.target) smoothScroll(e.target);
+        if(
+            e.target.classList.contains('hamburger') || 
+            e.target.parentNode.classList.contains('hamburger')) 
+            handleHamburgerClick(manu, hamburger);
 
-    manuBgListener.forEach(item => item.addEventListener('click', ()=> {
-        if(window.innerWidth < 1200) {
+        if(
+            e.target.classList.contains('manu__item') && 
+            window.innerWidth < 1200 ) 
             handleHamburgerClick(manu , hamburger);
-        }
-    }));
-    
-    document.addEventListener('click', e => smoothScroll(e.target));
+
+        if(e.target.classList.contains('closeBtn') ||
+            e.target.classList.contains('footer__cookies-link') ||
+            e.target.classList.contains('cookies__button--more')) 
+            handlePrivacyModal();
+    }, true);
 
     document.addEventListener('scroll', e => {
 

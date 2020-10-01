@@ -58,4 +58,22 @@ const initCookies = ()=> {
      return init();
  };
 
+ const handlePrivacyModal = ()=> {
+    const modal = document.querySelector('.privacy-modal');
+
+    if(!modal.classList.contains('privacy-modal--active')) {
+        modal.classList.add('privacy-modal--active');
+        modal.classList.remove('privacy-modal--noActive');
+    }else {
+        modal.classList.remove('privacy-modal--active');
+        modal.classList.add('privacy-modal--noActive');
+    }
+
+    
+ };
+
+ export {
+     handlePrivacyModal
+ }
+
  export default initCookies;
