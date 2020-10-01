@@ -33,7 +33,8 @@ document.addEventListener('DOMContentLoaded', ()=> {
             handleHamburgerClick(manu, hamburger);
 
         if(
-            e.target.classList.contains('manu__item') && 
+            (e.target.classList.contains('manu__item') || 
+            e.target.parentNode.classList.contains('manu__item')) && 
             window.innerWidth < 1200 ) 
             handleHamburgerClick(manu , hamburger);
 

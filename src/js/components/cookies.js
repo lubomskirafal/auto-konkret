@@ -58,7 +58,8 @@ const initCookies = ()=> {
      return init();
  };
 
- const handlePrivacyModal = ()=> {
+ const handlePrivacyModal = (e)=> {
+     
     const modal = document.querySelector('.privacy-modal');
 
     if(!modal.classList.contains('privacy-modal--active')) {
