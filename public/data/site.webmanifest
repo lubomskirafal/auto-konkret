@@ -1,6 +1,6 @@
 {
-    "name": "www.auto-konkret.pl",
-    "short_name": "O.S.K AutoKonkret",
+    "name": "youre-name",
+    "short_name": "youre-name",
     "icons": [
         {
             "src": "../images/favicons/android-chrome-192x192.png",
