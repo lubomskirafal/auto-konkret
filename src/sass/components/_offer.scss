@@ -15,12 +15,18 @@
         color: $special-color;
         font-weight: 100;
         text-transform: uppercase;
+        @include media(large) {
+            margin: 0 0 40px 0;
+        }
     }
     &__box{
         margin: 0 5px 40px 5px;
         text-align: left;
         width: 100%;
         max-width: 400px;
+        @include media(large) {
+            margin: 0 5px 0 5px;
+        }
         &--title {
             align-self: flex-start;
             
@@ -39,11 +45,12 @@
     &__content-title {
         font-size: 1.6rem;
         text-transform: uppercase;
-        margin: 0 0 5px 0 ;
+        margin: 0 0 10px 0 ;
     }
     &__content,li {
         font-size: 1rem;
         letter-spacing: 1px;
+        margin: 0 0 10px 0;
     }
     ul {
         list-style: disc;

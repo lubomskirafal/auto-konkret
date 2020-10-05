@@ -29,7 +29,8 @@ document.addEventListener('DOMContentLoaded', ()=> {
         if(e.target.dataset.target) smoothScroll(e.target);
         if(
             e.target.classList.contains('hamburger') || 
-            e.target.parentNode.classList.contains('hamburger')) 
+            e.target.parentNode.classList.contains('hamburger') ||
+            e.target.parentNode.classList.contains('hamburger__box')) 
             handleHamburgerClick(manu, hamburger);
 
         if(

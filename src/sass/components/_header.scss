@@ -67,7 +67,25 @@
         transition: box-shadow .2s;
         animation: lookAtMe 3s linear infinite;
         &--offer {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: $main-fc;
+            background-color: transparent;
+            border: 2px solid $main-fc;
+            padding: 10px;
+            letter-spacing: 1.2px;
+            margin: 20px 0 0px 0;
+            transition: box-shadow .2s;
+            animation: lookAtMe 3s linear infinite;
             align-self: flex-start;
+            @include media(large) {
+                margin: 0;
+                justify-self: flex-end;
+            }
+            &:hover,
+            &:focus {
+                box-shadow: 0 0 10px -1px $main-fc;
+            }
         }
         &:hover,
         &:focus {

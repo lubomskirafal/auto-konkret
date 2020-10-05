@@ -16,7 +16,7 @@
         z-index: 99;
         visibility: visible;
         display: block;
-        animation: showModal .5s forwards;
+        animation: showModal .3s forwards;
         @keyframes showModal {
             100%{transform: translate(-50%, -50%) scale(1)}
         }

@@ -1,12 +1,12 @@
 
-# **auto-konkret-driving-school-landing-page**
+# **landing-page-template**
 #
 
 ## **Instalation**
 
 <pre>
     <code>
-        git clone https://github.com/lubomskirafal/auto-konkret.git
+        git clone https://github.com/lubomskirafal/landing-page-template.git
         npm i
     </code>
 </pre>

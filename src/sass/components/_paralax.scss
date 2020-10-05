@@ -8,7 +8,6 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            z-index: 1;
             max-width: 90%;
             color: $main-fc;
             font-size: 1.4rem;
@@ -30,6 +29,7 @@
         height: 380px;
         background-color: #fff;
         overflow: hidden;
+        z-index: -1;
     }
     &__inner {
         position: absolute;
